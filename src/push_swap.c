@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 02:49:44 by user              #+#    #+#             */
-/*   Updated: 2024/09/01 17:51:58 by user             ###   ########.fr       */
+/*   Updated: 2024/09/01 22:52:56 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,44 +71,51 @@ static int initialize_stacks(t_stack **stack_a, t_stack **stack_b,
     return (1);
 }
 
-static int process_sorting(t_stack *stack_a, t_stack *stack_b)
+static void process_sorting(t_stack *stack_a, t_stack *stack_b)
 {
-    int result = 0;
-
     if (ft_stack_a_sort_check(stack_a))
-        result = 1;
+        ft_printf("already sorted!\n");
     else if (stack_a->size <= 5)
         ft_insertion_sort(stack_a, stack_b);
     else
         ft_radix_sort(stack_a, stack_b);
+
     if (!ft_stack_a_sort_check(stack_a))
-    {
         ft_printf("not sorted!\n");
-        result = 0;
-    }
     else
-    {
         ft_printf("sorted!\n");
-        result = 1;
-    }
-    return (result);
 }
 
 int ft_push_swap(char **splitted_inpstr, int size)
 {
     t_stack *stack_a;
     t_stack *stack_b;
-    int result;
 
     if (!initialize_stacks(&stack_a, &stack_b, splitted_inpstr, size))
         return (0);
-    
-    result = process_sorting(stack_a, stack_b);
-    
+    process_sorting(stack_a, stack_b);
     ft_free_chainedlst(&(stack_a->top));
     ft_free_chainedlst(&(stack_b->top));
     free(stack_a);
     free(stack_b);
-    
-    return (result);
+    return (0);
 }
+
+// int ft_push_swap(char **splitted_inpstr, int size)
+// {
+//     t_stack *stack_a;
+//     t_stack *stack_b;
+//     int result;
+
+//     if (!initialize_stacks(&stack_a, &stack_b, splitted_inpstr, size))
+//         return (0);
+    
+//     result = process_sorting(stack_a, stack_b);
+    
+//     ft_free_chainedlst(&(stack_a->top));
+//     ft_free_chainedlst(&(stack_b->top));
+//     free(stack_a);
+//     free(stack_b);
+    
+//     return (result);
+// }

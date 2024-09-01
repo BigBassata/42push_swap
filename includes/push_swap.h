@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 01:04:31 by user              #+#    #+#             */
-/*   Updated: 2024/09/01 22:20:47 by user             ###   ########.fr       */
+/*   Updated: 2024/09/01 23:14:00 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ int 	ft_rrr(t_stack *stack_a, t_stack *stack_b);
 void	ft_insertion_sort(t_stack *stack_a, t_stack *stack_b);
 void	ft_sort_three(t_stack *stack_a);
 void	ft_move_min_to_b(t_stack *stack_a, t_stack *stack_b, int min_pos);
-int	ft_find_min_position(t_stack *stack_a);
+int		ft_find_min_position(t_stack *stack_a);
 
 //radix
 void	ft_radix_sort(t_stack *a, t_stack *b);
 void	ft_normalize_stack(t_stack *a);
-int	*ft_stack_to_array(t_stack *stack);
+int		*ft_stack_to_array(t_stack *stack);
 void	ft_sort_array(int *array, int size);
-int	ft_get_max_bits(int max_num);
+int		ft_get_max_bits(int max_num);
 
 
 int	ft_push_swap(char **splitted_inpstr, int size);
