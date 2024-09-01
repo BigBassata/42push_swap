@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 01:10:28 by user              #+#    #+#             */
-/*   Updated: 2024/09/01 17:51:46 by user             ###   ########.fr       */
+/*   Updated: 2024/09/01 22:16:56 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int main(int argc, char **argv)
     char *input_str;
     char **numbers;
     int size;
-    int result;
 
     if (argc < 2)
         return (-1);
@@ -68,7 +67,7 @@ int main(int argc, char **argv)
     if (validate_and_split(input_str, &numbers) == -1)
         return (-1);
     size = ft_count_number(numbers);
-    result = ft_push_swap(numbers, size);
+    ft_push_swap(numbers, size);
     ft_free_split(numbers);
-    return (result);
+    return (0);
 }
