@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 17:30:07 by user              #+#    #+#             */
-/*   Updated: 2024/09/01 17:31:03 by user             ###   ########.fr       */
+/*   Updated: 2024/09/01 17:52:12 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,8 @@ void	ft_radix_sort(t_stack *a, t_stack *b)
 	int		max_bits;
 	int		size;
 
-	// Normalisation de la pile
 	ft_normalize_stack(a);
-	max_bits = ft_get_max_bits(a->size - 1);  // Nombre de bits nécessaires pour l'index max
+	max_bits = ft_get_max_bits(a->size - 1);
 	i = 0;
 	while (i < max_bits)
 	{

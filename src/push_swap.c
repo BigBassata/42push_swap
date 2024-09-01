@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 02:49:44 by user              #+#    #+#             */
-/*   Updated: 2024/09/01 17:32:18 by user             ###   ########.fr       */
+/*   Updated: 2024/09/01 17:51:58 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,81 +112,3 @@ int ft_push_swap(char **splitted_inpstr, int size)
     
     return (result);
 }
-
-// t_list *ft_create_chainedlst(char **splitted_inpstr, int size)
-// {
-//     t_list *newlst;
-//     t_list *beginlst;
-//     int *value;
-//     int i;
-
-//     beginlst = NULL;
-//     i = 0;
-//     while (splitted_inpstr[i] && i < size)
-//     {
-//         value = (int *)malloc(sizeof(int));
-//         if (!value)
-//         {
-//             ft_free_chainedlst(&beginlst);
-//             return (NULL);
-//         }
-//         *value = ft_atoi(splitted_inpstr[i]);
-//         newlst = ft_lstnew(value);
-//         if (!newlst)
-//         {
-//             free(value);
-//             ft_free_chainedlst(&beginlst);
-//             return (NULL);
-//         }
-//         ft_lstadd_back(&beginlst, newlst);
-//         i++;
-//     }
-//     return (beginlst);
-// }
-
-// int ft_push_swap(char **splitted_inpstr, int size)
-// {
-//     t_stack *stack_a;
-//     t_stack *stack_b;
-//     int result = 0;
-
-//     stack_a = (t_stack *)malloc(sizeof(t_stack));
-//     if (!stack_a)
-//         return (0);
-//     stack_b = (t_stack *)malloc(sizeof(t_stack));
-//     if (!stack_b)
-//     {
-//         free(stack_a);
-//         return (0);
-//     }
-//     stack_a->top = ft_create_chainedlst(splitted_inpstr, size);
-//     stack_a->size = size;
-//     stack_b->top = NULL;
-//     stack_b->size = 0;
-
-//     if (ft_stack_a_sort_check(stack_a))
-//         result = 1;
-//     else if (stack_a->size <= 5)
-//         ft_insertion_sort(stack_a, stack_b);
-//     // else
-//     //     ft_radix_sort(stack_a, stack_b);
-
-//     if (!ft_stack_a_sort_check(stack_a))
-//     {
-//         ft_printf("not sorted!\n");
-//         result = 0;
-//     }
-//     else
-//     {
-//         ft_printf("sorted!\n");
-//         result = 1;
-//     }
-
-//     // Cleanup
-//     ft_free_chainedlst(&(stack_a->top));
-//     ft_free_chainedlst(&(stack_b->top));
-//     free(stack_a);
-//     free(stack_b);
-
-//     return (result);
-// }
