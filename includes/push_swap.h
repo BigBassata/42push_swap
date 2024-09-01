@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 01:04:31 by user              #+#    #+#             */
-/*   Updated: 2024/09/01 17:32:03 by user             ###   ########.fr       */
+/*   Updated: 2024/09/01 22:20:47 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,12 @@ int	    ft_is_valid_input(char *input_str);
 int     ft_split_input_check(char **numbers);
 
 //Utils
-void    ft_free_split(char **split);
 int	    ft_count_number(char **numbers);
 void	ft_error_mess_print(void);
 void	ft_free_chainedlst(t_list **lst);
 void	ft_free_lst(t_list *lst);
 t_list	*ft_before_last_lst(t_list *lst);
-int	ft_stack_a_sort_check(t_stack *stack_a);
+int		ft_stack_a_sort_check(t_stack *stack_a);
 
 
 //Operations

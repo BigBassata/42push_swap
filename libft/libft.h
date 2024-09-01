@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 23:09:11 by niarefi           #+#    #+#             */
-/*   Updated: 2024/09/01 02:43:16 by user             ###   ########.fr       */
+/*   Updated: 2024/09/01 22:19:44 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 long long   ft_atoll(const char *nptr);
+void ft_free_split(char **split);
+
 
 typedef struct s_list
 {

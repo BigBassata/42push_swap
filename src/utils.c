@@ -6,36 +6,11 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 02:12:21 by user              #+#    #+#             */
-/*   Updated: 2024/09/01 16:54:07 by user             ###   ########.fr       */
+/*   Updated: 2024/09/01 22:23:10 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void ft_free_split(char **split)
-{
-    int i;
-
-    i = 0;
-    if (!split)
-        return;
-    while (split[i])
-    {
-        free(split[i]);
-        i++;
-    }
-    free(split);
-}
-
-int	ft_count_number(char **numbers)
-{
-	int	i;
-
-	i = 0;
-	while (numbers[i])
-		i++;
-	return (i);
-}
 
 void	ft_error_mess_print(void)
 {

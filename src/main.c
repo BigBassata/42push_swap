@@ -6,11 +6,21 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 01:10:28 by user              #+#    #+#             */
-/*   Updated: 2024/09/01 22:16:56 by user             ###   ########.fr       */
+/*   Updated: 2024/09/01 22:23:02 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	ft_count_number(char **numbers)
+{
+	int	i;
+
+	i = 0;
+	while (numbers[i])
+		i++;
+	return (i);
+}
 
 static int process_input(int argc, char **argv, char **input_str)
 {
