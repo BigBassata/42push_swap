@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: licohen <licohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 01:10:28 by user              #+#    #+#             */
-/*   Updated: 2024/09/01 22:53:01 by user             ###   ########.fr       */
+/*   Updated: 2024/09/02 16:04:02 by licohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 int	ft_count_number(char **numbers)
-{
+{ 
 	int	i;
 
 	i = 0;

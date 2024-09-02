@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: licohen <licohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 02:49:44 by user              #+#    #+#             */
-/*   Updated: 2024/09/01 22:52:56 by user             ###   ########.fr       */
+/*   Updated: 2024/09/02 16:02:46 by licohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,21 +101,3 @@ int ft_push_swap(char **splitted_inpstr, int size)
     return (0);
 }
 
-// int ft_push_swap(char **splitted_inpstr, int size)
-// {
-//     t_stack *stack_a;
-//     t_stack *stack_b;
-//     int result;
-
-//     if (!initialize_stacks(&stack_a, &stack_b, splitted_inpstr, size))
-//         return (0);
-    
-//     result = process_sorting(stack_a, stack_b);
-    
-//     ft_free_chainedlst(&(stack_a->top));
-//     ft_free_chainedlst(&(stack_b->top));
-//     free(stack_a);
-//     free(stack_b);
-    
-//     return (result);
-// }
