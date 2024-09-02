@@ -6,7 +6,7 @@
 /*   By: licohen <licohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:27:17 by user              #+#    #+#             */
-/*   Updated: 2024/09/02 16:04:19 by licohen          ###   ########.fr       */
+/*   Updated: 2024/09/02 18:45:12 by licohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_move_min_to_b(t_stack *stack_a, t_stack *stack_b, int min_pos)
 		ft_pb(stack_a, stack_b);
 	else if (min_pos <= stack_a->size / 2)
 	{
-		while(min_pos > 0)
+		while (min_pos > 0)
 		{
 			ft_ra(stack_a);
 			min_pos--;
@@ -60,40 +60,49 @@ void	ft_move_min_to_b(t_stack *stack_a, t_stack *stack_b, int min_pos)
 	}
 }
 
-void	ft_sort_three(t_stack *stack_a)
+static void	ft_apply_sort_action(t_stack *stack_a, int firstv, int secondv,
+		int thirdv)
 {
-	int	firstv;
-	int	secondv;
-	int	thirdv;
-
-	if (stack_a->size < 3 || !stack_a || !stack_a->top || !stack_a->top->next || !stack_a->top->next->next)
-		return ;
-	firstv = *(int *)(stack_a->top->content);
-	secondv = *(int *)(stack_a->top->next->content);
-	thirdv = *(int *)stack_a->top->next->next->content;
-	if (firstv > secondv && firstv < thirdv && secondv < thirdv)// [2, 1, 3]
+	if (firstv > secondv && firstv < thirdv)
 		ft_sa(stack_a);
-	else if (firstv > secondv && firstv > thirdv && secondv > thirdv)// [3, 2, 1]
+	else if (firstv > secondv && secondv > thirdv)
 	{
 		ft_sa(stack_a);
 		ft_rra(stack_a);
 	}
-	else if (firstv > secondv && firstv > thirdv && secondv < thirdv)// [3, 1, 2]
+	else if (firstv > secondv && firstv > thirdv)
 		ft_ra(stack_a);
-	else if (firstv < secondv && firstv > thirdv && secondv > thirdv)// [2, 3, 1]
+	else if (firstv < secondv && firstv > thirdv)
 		ft_rra(stack_a);
-	else if (firstv < secondv && firstv < thirdv && secondv > thirdv)// [1, 3, 2]
+	else if (firstv < secondv && secondv > thirdv)
 	{
 		ft_rra(stack_a);
 		ft_sa(stack_a);
 	}
 }
 
+void	ft_sort_three(t_stack *stack_a)
+{
+	int	firstv;
+	int	secondv;
+	int	thirdv;
+
+	if (stack_a->size < 3 || !stack_a || !stack_a->top || !stack_a->top->next
+		|| !stack_a->top->next->next)
+		return ;
+	firstv = *(int *)(stack_a->top->content);
+	secondv = *(int *)(stack_a->top->next->content);
+	thirdv = *(int *)stack_a->top->next->next->content;
+	ft_apply_sort_action(stack_a, firstv, secondv, thirdv);
+}
+
 void	ft_insertion_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	int	min_pos;
 
-	while(stack_a->size > 3)
+	if (stack_a->size == 2)
+		ft_sa(stack_a);
+	while (stack_a->size > 3)
 	{
 		min_pos = ft_find_min_position(stack_a);
 		ft_move_min_to_b(stack_a, stack_b, min_pos);

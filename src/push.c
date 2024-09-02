@@ -6,48 +6,44 @@
 /*   By: licohen <licohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 03:14:14 by user              #+#    #+#             */
-/*   Updated: 2024/09/02 16:04:11 by licohen          ###   ########.fr       */
+/*   Updated: 2024/09/02 18:43:05 by licohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int push(t_stack *stack_dst, t_stack *stack_src)
+static int	push(t_stack *stack_dst, t_stack *stack_src)
 {
-    t_list *first;
+	t_list	*first;
 
-    if (stack_src == NULL || stack_src->top == NULL)
-        return (-1);
-
-    first = stack_src->top;
-    stack_src->top = first->next;
-    
-    if (stack_dst->top == NULL)
-    {
-        stack_dst->top = first;
-        stack_dst->top->next = NULL;
-    }
-    else
-        ft_lstadd_front(&stack_dst->top, first);
-
-    stack_dst->size++;
-    stack_src->size--;
-
-    return (0);
+	if (stack_src == NULL || stack_src->top == NULL)
+		return (-1);
+	first = stack_src->top;
+	stack_src->top = first->next;
+	if (stack_dst->top == NULL)
+	{
+		stack_dst->top = first;
+		stack_dst->top->next = NULL;
+	}
+	else
+		ft_lstadd_front(&stack_dst->top, first);
+	stack_dst->size++;
+	stack_src->size--;
+	return (0);
 }
 
-int ft_pa(t_stack *stack_a, t_stack *stack_b)
+int	ft_pa(t_stack *stack_a, t_stack *stack_b)
 {
-    if (push(stack_a, stack_b) == -1)
-        return (-1);
-    ft_printf("pa\n");
-    return (0);
+	if (push(stack_a, stack_b) == -1)
+		return (-1);
+	ft_printf("pa\n");
+	return (0);
 }
 
-int ft_pb(t_stack *stack_a, t_stack *stack_b)
+int	ft_pb(t_stack *stack_a, t_stack *stack_b)
 {
-    if (push(stack_b, stack_a) == -1)
-        return (-1);
-    ft_printf("pb\n");
-    return (0);
+	if (push(stack_b, stack_a) == -1)
+		return (-1);
+	ft_printf("pb\n");
+	return (0);
 }

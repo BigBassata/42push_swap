@@ -6,7 +6,7 @@
 /*   By: licohen <licohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 01:51:13 by user              #+#    #+#             */
-/*   Updated: 2024/09/02 16:04:08 by licohen          ###   ########.fr       */
+/*   Updated: 2024/09/02 18:40:44 by licohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,15 @@ int	ft_is_valid_input(char *input_str)
 	i = 0;
 	while (input_str[i])
 	{
-		if (!ft_isdigit(input_str[i]) && input_str[i] != ' ' && input_str[i] != '-' && input_str[i] != '+')
+		if (!ft_isdigit(input_str[i]) && input_str[i] != ' '
+			&& input_str[i] != '-' && input_str[i] != '+')
+		{
+			ft_error_mess_print();
+			return (0);
+		}
+		if (((input_str[i] == '-' || input_str[i] == '+')
+				&& (!ft_isdigit(input_str[i + 1]))) || (ft_isdigit(input_str[i])
+				&& (input_str[i + 1] == '-' || input_str[i + 1] == '+')))
 		{
 			ft_error_mess_print();
 			return (0);
@@ -60,8 +68,8 @@ int	ft_is_valid_input(char *input_str)
 
 int	ft_split_input_check(char **numbers)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	long	atoied_str;
 
 	i = 0;

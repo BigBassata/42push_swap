@@ -6,7 +6,7 @@
 /*   By: licohen <licohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 02:12:21 by user              #+#    #+#             */
-/*   Updated: 2024/09/02 16:04:29 by licohen          ###   ########.fr       */
+/*   Updated: 2024/09/02 18:27:35 by licohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_list	*ft_before_last_lst(t_list *lst)
 	t_list	*bfll;
 
 	bfll = NULL;
-	while(lst->next)
+	while (lst->next)
 	{
 		bfll = lst;
 		lst = lst->next;

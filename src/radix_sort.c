@@ -6,12 +6,11 @@
 /*   By: licohen <licohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 17:30:07 by user              #+#    #+#             */
-/*   Updated: 2024/09/02 16:04:14 by licohen          ###   ########.fr       */
+/*   Updated: 2024/09/02 18:36:28 by licohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
 
 int	ft_get_max_bits(int max_num)
 {
@@ -46,6 +45,7 @@ void	ft_sort_array(int *array, int size)
 		i++;
 	}
 }
+
 int	*ft_stack_to_array(t_stack *stack)
 {
 	int		*array;
@@ -94,11 +94,10 @@ void	ft_normalize_stack(t_stack *a)
 
 void	ft_radix_sort(t_stack *a, t_stack *b)
 {
-	int		i;
-	int		j;
-	int		num;
-	int		max_bits;
-	int		size;
+	int	i;
+	int	j;
+	int	size;
+	int	max_bits;
 
 	ft_normalize_stack(a);
 	max_bits = ft_get_max_bits(a->size - 1);
@@ -109,8 +108,7 @@ void	ft_radix_sort(t_stack *a, t_stack *b)
 		size = a->size;
 		while (j < size)
 		{
-			num = *(int *)(a->top->content);
-			if (((num >> i) & 1) == 0)
+			if (((*(int *)(a->top->content) >> i) & 1) == 0)
 				ft_pb(a, b);
 			else
 				ft_ra(a);
